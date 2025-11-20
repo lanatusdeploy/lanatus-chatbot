@@ -37,7 +37,7 @@ export default function ChatPage() {
           { role: "bot", text: "Sorry, Please try again", timestamp: Date.now() },
         ]);
       } else {
-        const botText = res?.message ?? JSON.stringify(res);
+        const botText = res[0]?.output;
         setMessages((m) => [
           ...m,
           { role: "bot", text: botText, timestamp: Date.now() },

@@ -27,7 +27,7 @@ export default function ChatInput({ onSend, disabled, hasMessages = true }) {
   return (
     <div className={`p-4 ${!hasMessages ? 'flex justify-center' : ''}`}>
       <div className={`relative ${!hasMessages ? 'w-full max-w-2xl' : ''}`}>
-        <div className="flex items-start gap-3 bg-gray-100 rounded-[20px] px-4 py-4 border-2 border-gray-400 hover:border-blue-400 focus-within:border-blue-500 shadow-lg focus-within:shadow-lg transition-all">
+        <div className="flex items-start gap-3 bg-gray-100 rounded-[20px] px-4 py-3 border-2 border-gray-400 hover:border-blue-400 focus-within:border-blue-500 shadow-lg focus-within:shadow-lg transition-all">
           {/* Textarea */}
           <textarea
             ref={textareaRef}

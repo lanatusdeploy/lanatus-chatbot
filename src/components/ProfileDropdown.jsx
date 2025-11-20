@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from "react";
 export default function ProfileDropdown({ user, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-  console.log({ user });
 
   useEffect(() => {
     const handleClickOutside = (event) => {
