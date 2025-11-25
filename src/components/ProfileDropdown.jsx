@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 
 export default function ProfileDropdown({ user, onLogout }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -16,6 +17,10 @@ export default function ProfileDropdown({ user, onLogout }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    setImageError(false);
+  }, [user?.picture]);
 
   const handleLogout = () => {
     setIsOpen(false);
@@ -47,11 +52,12 @@ export default function ProfileDropdown({ user, onLogout }) {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-center w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300 hover:border-gray-400 transition-colors cursor-pointer"
       >
-        {user?.picture && user?.picture.trim() ? (
+        {user?.picture && user?.picture.trim() && !imageError ? (
           <img
             src={user.picture}
             alt={user.name || user.email}
             className="w-full h-full object-cover"
+            onError={() => setImageError(true)}
           />
         ) : (
           <div className="w-full h-full bg-gray-400 flex items-center justify-center text-white font-semibold">
