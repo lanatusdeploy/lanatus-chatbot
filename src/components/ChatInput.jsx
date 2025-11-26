@@ -46,7 +46,7 @@ export default function ChatInput({ onSend, disabled, hasMessages = true }) {
             <button
               onClick={submit}
               disabled={disabled}
-              className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shrink-0"
+              className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-colors shrink-0"
               title="Send message"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

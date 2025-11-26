@@ -76,9 +76,7 @@ export default function ChatPage() {
       <div className="h-screen flex flex-col bg-gray-100 overflow-hidden">
         <header className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200">
           <div>
-            <h1 className="text-xl font-semibold bg-linear-to-r from-gray-600 to-gray-400 bg-clip-text text-transparent">
-              Lanatus Systems
-            </h1>
+            <img src="/logo.png" alt="Lanatus Systems" className="h-12" />
           </div>
           <div className="flex items-center">
             <ProfileDropdown user={user} onLogout={logout} />
