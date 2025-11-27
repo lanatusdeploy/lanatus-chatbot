@@ -39,7 +39,7 @@ export default function ChatPage() {
     setLoading(true);
 
     try {
-      const res = await sendMessageToN8n(processedText, user.name);
+      const res = await sendMessageToN8n(processedText, user.name, user.email);
       if (!res) {
         setMessages((m) => [
           ...m,
