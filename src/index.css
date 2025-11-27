@@ -4,6 +4,30 @@
 /* optional small tweaks */
 html, body, #root { height: 100%; }
 
- .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
+/* Custom thin scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Remove scrollbar arrows */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Firefox thin scrollbar */
+* {
+  scrollbar-width: thin;
+}

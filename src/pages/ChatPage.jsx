@@ -74,7 +74,7 @@ export default function ChatPage() {
   return (
     <>
       <div className="h-screen flex flex-col bg-gray-100 overflow-hidden">
-        <header className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200">
+        <header className="flex-none flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200">
           <div>
             <img src="/logo.png" alt="Lanatus Systems" className="h-12" />
           </div>
@@ -83,23 +83,17 @@ export default function ChatPage() {
           </div>
         </header>
 
-        <div
-          ref={chatContainerRef}
-          className="flex-1 overflow-y-auto pt-[73px] scrollbar-hide"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
+        <div ref={chatContainerRef} className="flex-1 overflow-y-auto">
           <div className="max-w-2xl mx-auto h-full flex flex-col px-4 md:px-6">
             <ChatWindow messages={messages} />
+            {loading && (
+              <div className="text-sm ml-4 text-gray-500 mb-2">Responding…</div>
+            )}
           </div>
         </div>
 
-        <div className="fixed bottom-0 left-0 right-0 z-10 bg-gray-100">
+        <div className="flex-none bg-gray-100">
           <div className="max-w-2xl mx-auto px-4 md:px-6">
-            {loading && (
-              <div className="text-sm ml-4 text-gray-500 mb-2">
-                Responding…
-              </div>
-            )}
             <ChatInput
               onSend={handleSend}
               disabled={loading}
